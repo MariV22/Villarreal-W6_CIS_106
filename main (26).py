@@ -1,0 +1,15 @@
+def fibonacci_sequence(n):
+    a, b = 1, 1
+    sequence = [a, b]
+
+    for _ in range(n - 2):
+        a, b = b, a + b
+        sequence.append(b)
+
+    return sequence
+
+# Generate and display the first 20 Fibonacci numbers
+n = 20
+sequence = fibonacci_sequence(n)
+print("First 20 numbers in the Fibonacci sequence:")
+print(", ".join(map(str, sequence)))
