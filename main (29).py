@@ -1,0 +1,31 @@
+def calculate_tuition():
+    total_tuition = 0
+    student_count = 0
+
+    while True:
+        last_name = input("Enter student last name (or 'done' to finish): ")
+        if last_name.lower() == 'done':
+            break
+
+        district_code = input("Enter district code (I or O): ").upper()
+        while district_code not in ['I', 'O']:
+            district_code = input("Invalid code. Enter district code (I or O): ").upper()
+
+        credits_taken = int(input("Enter number of credits taken: "))
+
+        if district_code == 'I':
+            cost_per_credit = 250.00
+        else:
+            cost_per_credit = 500.00
+
+        tuition_owed = credits_taken * cost_per_credit
+        total_tuition += tuition_owed
+        student_count += 1
+
+        print(f"Student: {last_name}, Credits: {credits_taken}, Tuition Owed: ${tuition_owed:.2f}")
+
+    print(f"\nTotal Tuition Owed: ${total_tuition:.2f}")
+    print(f"Total Number of Students: {student_count}")
+
+# Run the function
+calculate_tuition()
